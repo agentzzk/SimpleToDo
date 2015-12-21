@@ -1,12 +1,20 @@
 <H1>All Tasks</H1>
 <br>
-<h3><%= @tasks.first.user.name %></h3>
+<div class="list-group container">
+  <a class="list-group-item active">
+    <h3 class="list-group-item-heading">Signed in as <%= @userAccount.name %></h3>
+    <p class="list-group-item-text"></p>
+  </a>
+</div>
 
-<hr/>
-
-<% @tasks.each do |task| %>
-  <div class = "row">
-    <%= link_to task.title, "" %><br>
-    <p>created <%= time_ago_in_words(task.created_at) %> ago</p>
+<div class="list-group container">
+  <% @tasks.each do |task| %>
+  <%= link_to task_path(task), :class => "list-group-item" do %>
+  <div>
+    <h4 class="list-group-item-heading"><%= task.title %></h4>
+    <p class="list-group-item-text">Created <%= time_ago_in_words(task.created_at) %> ago</p>
   </div>
-<% end %>
+  <% end %>
+  <% end %>
+  
+</div>
