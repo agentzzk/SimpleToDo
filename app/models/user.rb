@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   
-  has_many :tasks
+  validates :email, email_format: { message: "Incorrect email format!" }, presence: true
+  validates :name, presence: true
   
 end

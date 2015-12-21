@@ -7,7 +7,7 @@ class TaskTest < ActiveSupport::TestCase
   end
   
   test "Title field cannot be blank" do
-    @task.title = ""
+    @task.title = " "
     assert_not @task.valid?
   end
   
