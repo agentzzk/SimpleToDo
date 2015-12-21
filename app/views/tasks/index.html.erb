@@ -1,0 +1,12 @@
+<H1>All Tasks</H1>
+<br>
+<h3><%= @tasks.first.user.name %></h3>
+
+<hr/>
+
+<% @tasks.each do |task| %>
+  <div class = "row">
+    <%= link_to task.title, "" %><br>
+    <p>created <%= time_ago_in_words(task.created_at) %> ago</p>
+  </div>
+<% end %>
