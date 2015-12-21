@@ -8,7 +8,7 @@ class TasksController < ApplicationController
   def show
     # Params is an entie HASH passed into the link. We find the ID 
     # component in the HASH to find the according task object/entery in the db.
-    @task = Task.find(params[:id])
+    @task = Task.find(params[:id]
   end
   
 end
