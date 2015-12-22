@@ -1,5 +1,9 @@
-<div class="container task_nav">
+<div class = "container">
+<div class="task_nav">
   <%= link_to "Back", tasks_path, class: "btn btn-default" %>
 </div>
-<H1>HELLO</H1>
-<p>This links to the entry ID: <%= @task.id %></p>
+<H1><%= @task.title%></H1>
+<p>Last updated: <%= time_ago_in_words(@task.created_at) %> ago</p>
+<hr/>
+<p class="lead"><%= @task.details %></p>
+</div>
