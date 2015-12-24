@@ -1,0 +1,16 @@
+<div class = "container">
+<div class="task_nav">
+  <%= link_to "Back", tasks_path, class: "btn btn-default" %>
+</div>
+<h2>Create a New Task<small><br>*Title field cannot be empty</small></h2>
+<hr/>
+<%= form_for @newTask do |f| %>
+  <%= f.label  :title, class: "lead" %><br>
+  <%= f.text_field  :title %><br>
+  
+  <%= f.label  :details, class: "lead" %><br>
+  <%= f.text_area  :details, rows:10 %>
+  
+  <%= f.submit  'Save Task', class: "btn btn-primary" %>
+<% end %>
+</div>

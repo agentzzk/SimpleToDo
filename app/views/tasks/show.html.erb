@@ -3,7 +3,7 @@
   <%= link_to "Back", tasks_path, class: "btn btn-default" %>
 </div>
 <H1><%= @task.title%></H1>
-<p>Last updated: <%= time_ago_in_words(@task.created_at) %> ago</p>
+<p>Last updated: <%= time_ago_in_words(@task.updated_at) %> ago</p>
 <hr/>
 <p class="lead"><%= @task.details %></p>
 </div>

@@ -11,4 +11,22 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
   end
   
+  def new
+    @newTask = Task.new();
+     # don't use create here as you wanna make sure user hits submit
+     # then in the create action below, you would take the information and save it
+  end
+  
+  def create
+    
+  end
+  
+  def edit
+    
+  end
+  
+  def update
+    
+  end
+  
 end
