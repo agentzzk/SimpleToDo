@@ -2,7 +2,7 @@
 <div class="task_nav">
   <%= link_to "Back", tasks_path, class: "btn btn-default" %>
 </div>
-<h2>Create a New Task<small><br>*Title field cannot be empty</small></h2>
+<h2>Create a New Task<small><br>*Title field cannot be empty.</small></h2>
 <hr/>
 <%= form_for @newTask do |f| %>
   <%= f.label  :title, class: "lead" %><br>
