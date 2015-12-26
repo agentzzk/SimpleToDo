@@ -2,8 +2,22 @@
 <div class="task_nav">
   <%= link_to "Back", tasks_path, class: "btn btn-default" %>
 </div>
-<h2>Create a New Task<small><br>*Title field cannot be empty.</small></h2>
+<h2>Create a New Task<small><br>Title field cannot be empty.</small></h2>
 <hr/>
+<% if @newTask.errors.any?  %>
+  <div class = "container-fluid text-left">
+    <div class = "alert alert-danger">
+      <h5>Please correct the following errors: </h5>
+      <ul>
+        <% @newTask.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
+<div class = "container-fluid well">
 <%= form_for @newTask do |f| %>
   <%= f.label  :title, class: "lead" %><br>
   <%= f.text_field  :title %><br>
@@ -13,4 +27,5 @@
   
   <%= f.submit  'Save Task', class: "btn btn-primary" %>
 <% end %>
+</div>
 </div>
