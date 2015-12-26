@@ -8,6 +8,8 @@
 </div>
 
 <div class="list-group container">
+  <%= render 'layouts/messages' %>
+  <%= yield %>
   <% @tasks.each do |task| %>
   <%= link_to task_path(task), :class => "list-group-item" do %>
   <div>

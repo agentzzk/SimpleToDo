@@ -18,7 +18,16 @@ class TasksController < ApplicationController
   end
   
   def create
+    @newTask = Task.new(task_params)
+    @newTask.user = User.first
     
+    if @newTask.save
+      flash[:success] = "Task created!"
+      redirect_to tasks_path
+      
+    else
+      render :new
+    end
   end
   
   def edit
@@ -28,5 +37,13 @@ class TasksController < ApplicationController
   def update
     
   end
+  
+  private
+      
+      def task_params
+        
+        params.require(:task).permit(:title, :details)
+        
+      end
   
 end

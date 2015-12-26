@@ -1,0 +1,8 @@
+  <div class = "list-group-item">
+    <% flash.each do |message_type, message| %>
+    <div class = "alert alert-<%= message_type %>">
+      <p class = "lead"><%= message %>
+      <a class = "close" data-dismiss = "alert">&#215;</a></p>
+      <% end %>
+    </div>
+  </div>
