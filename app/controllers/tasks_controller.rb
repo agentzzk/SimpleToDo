@@ -1,8 +1,12 @@
 class TasksController < ApplicationController
+  before_action :check_logged_in
+  
+  def check_logged_in
+    redirect_to root_path if !logged_in?
+  end
   
   def index
-    @tasks = Task.all
-    @userAccount = @tasks.first.user
+    @tasks = Task.where(:user_id => session[:user_id])
   end
   
   def show
@@ -19,7 +23,7 @@ class TasksController < ApplicationController
   
   def create
     @newTask = Task.new(task_params)
-    @newTask.user = User.first
+    @newTask.user_id = session[:user_id]
     
     if @newTask.save
       flash[:success] = "Task created!"

@@ -1,14 +1,15 @@
 class UsersController < ApplicationController
   
   def new
-    @user = User.new
+    @newUser = User.new
   end
   
   def create
-    @user = User.new(user_params)
+    @newUser = User.new(user_params)
     
-    if @user.save
+    if @newUser.save
       flash[:success] = "Account created!"
+      session[:user_id] = user.id
       redirect_to tasks_path
       
     else

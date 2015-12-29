@@ -17,4 +17,8 @@ Rails.application.routes.draw do
   resources :users, except: [:new]  #use standard convention for everything but the new user action
   get '/register', to: 'users#new'   #redefine the new action with a new link/route
   
+  get '/login', to: 'logins#new'
+  post '/login', to: 'logins#create'
+  get '/logout', to: 'logins#destroy'
+  
 end

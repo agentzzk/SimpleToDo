@@ -2,7 +2,7 @@
 <br>
 <div class="list-group container">
   <a class="list-group-item active">
-    <h3 class="list-group-item-heading">Signed in as <%= @userAccount.name %></h3>
+    <h3 class="list-group-item-heading">Signed in as <%= User.find(session[:user_id]).name %></h3>
     <p class="list-group-item-text"></p>
   </a>
 </div>
@@ -22,5 +22,6 @@
   </div>
   <% end %>
   <% end %>
-  
+  <br>
+  <p class="lead"><%= link_to "Logout", '/logout', class: "editLink" %></p> 
 </div>
