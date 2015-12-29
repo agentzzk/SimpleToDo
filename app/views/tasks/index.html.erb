@@ -10,6 +10,10 @@
 <div class="list-group container">
   <%= render 'layouts/messages' %>
   <%= yield %>
+  <%= link_to new_task_path, :class => "list-group-item" do %>
+    <h4 class="list-group-item-heading lead" style = "color: green;">+ Add</h4>
+    <p class="list-group-item-text" style = "color: green;">Create a new task</p>
+  <% end %>
   <% @tasks.each do |task| %>
   <%= link_to task_path(task), :class => "list-group-item" do %>
   <div>

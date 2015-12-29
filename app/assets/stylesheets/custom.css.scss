@@ -33,3 +33,13 @@ input {
 textarea {
   width: 85%;
 }
+
+a.editLink, a.editLink:link, a.editLink:hover, a.editLink:visited, a.editLink:active {
+  text-decoration: none;
+}
+
+.details.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 700px; /* or 950px */
+}

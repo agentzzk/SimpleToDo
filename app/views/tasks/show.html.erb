@@ -5,5 +5,6 @@
 <H2><%= @task.title%></H2>
 <p>Last updated: <%= time_ago_in_words(@task.updated_at) %> ago</p>
 <hr/>
-<p class="lead"><%= @task.details %></p>
+<p><%= simple_format(@task.details, class: "lead text-left details container-fluid") %></p>
+<p class="lead"><%= link_to "Edit", edit_task_path, class: "editLink" %></p> 
 </div>

@@ -31,17 +31,26 @@ class TasksController < ApplicationController
   end
   
   def edit
-    
+    @editTask = Task.find(params[:id])
   end
   
   def update
+    @editTask = Task.find(params[:id])
     
+    if @editTask.update(task_params)
+      flash[:success] = "Task updated!"
+      redirect_to task_path(@editTask)
+      
+    else
+      render :edit
+    end
   end
   
   private
       
       def task_params
         
+        #white-list the parameters
         params.require(:task).permit(:title, :details)
         
       end
