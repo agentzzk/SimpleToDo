@@ -1,0 +1,34 @@
+<div class = "register container">
+<h2>Register<small><br>Please fill out the following details:</small></h2>
+<hr/>
+<% if @newUser.errors.any?  %>
+  <div class = "container-fluid text-left">
+    <div class = "alert alert-danger">
+      <h5>Please correct the following errors: </h5>
+      <ul>
+        <% @newUser.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
+<div class = "container-fluid well">
+<%= form_for @newUser do |f| %>
+  <%= f.label  :name, class: "lead" %><br>
+  <%= f.text_field  :name %><br>
+  
+  <%= f.label  :email, class: "lead" %><br>
+  <%= f.email_field  :email %><br>
+  
+  <%= f.label  :password, class: "lead" %><br>
+  <%= f.password_field  :password %><br>
+  
+  <%= f.submit  'Register', class: "btn btn-primary" %>
+<% end %>
+</div>
+</div>
+<div class = "container">
+  
+</div>
