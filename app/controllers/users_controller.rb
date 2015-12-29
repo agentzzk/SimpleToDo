@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+  before_action :check_logged_in
+  
+  def check_logged_in
+    redirect_to tasks_path if logged_in?
+  end
   
   def new
     @newUser = User.new
