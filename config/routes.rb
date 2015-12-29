@@ -14,4 +14,7 @@ Rails.application.routes.draw do
   
   resources :tasks
   
+  resources :users, except: [:new]  #use standard convention for everything but the new user action
+  get '/register', to: 'users#new'   #redefine the new action with a new link/route
+  
 end
