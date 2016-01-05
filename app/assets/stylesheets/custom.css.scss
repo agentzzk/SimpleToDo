@@ -38,6 +38,11 @@ a.editLink, a.editLink:link, a.editLink:hover, a.editLink:visited, a.editLink:ac
   text-decoration: none;
 }
 
+a.deleteLink, a.deleteLink:link, a.deleteLink:hover, a.deleteLink:visited, a.deleteLink:active {
+  text-decoration: none;
+  color: #A61919;
+}
+
 .details.container-fluid {
   margin-right: auto;
   margin-left: auto;
