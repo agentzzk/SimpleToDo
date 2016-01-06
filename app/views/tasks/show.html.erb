@@ -9,5 +9,5 @@
 <p><%= simple_format(@task.details) %></p>
 </div>
 <p class="lead"><%= link_to "Edit", edit_task_path, class: "editLink" %></p> 
-<p class="lead"><%= link_to "Delete Task", edit_task_path, class: "deleteLink" %></p> 
+<p class="lead"><%= link_to "Delete Task", @task, method: :delete, data: {confirm: "Are you sure?"}, class: "deleteLink" %></p> 
 </div>
