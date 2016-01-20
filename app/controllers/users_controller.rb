@@ -14,11 +14,10 @@ class UsersController < ApplicationController
     
     if @newUser.save
       flash[:success] = "Account created!"
-      session[:user_id] = user.id
-      redirect_to tasks_path
+      redirect_to logout_path
       
     else
-      render :new
+      render "new"
     end
   end
   

@@ -25,7 +25,7 @@
   <%= f.label  :password, class: "lead" %><br>
   <%= f.password_field  :password %><br>
   
-  <%= f.submit  'Register', class: "btn btn-primary" %>
+  <%= f.submit(@newUser.new_record? ? 'Register' : 'Register', class: "btn btn-primary") %>
 <% end %>
 </div>
 </div>
