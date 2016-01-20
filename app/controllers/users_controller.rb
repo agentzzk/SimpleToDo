@@ -13,11 +13,11 @@ class UsersController < ApplicationController
     @newUser = User.new(user_params)
     
     if @newUser.save
-      flash[:success] = "Account created!"
-      redirect_to logout_path
+      flash[:success] = "Account created! Please login to use the app."
+      redirect_to login_path
       
     else
-      render "new"
+      render :new
     end
   end
   

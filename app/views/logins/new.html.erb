@@ -1,6 +1,8 @@
 <div class = "register container">
 <h2>Log-in<small><br>Sign into your account to access your saved to-do list</small></h2>
 <hr/>
+  <%= render 'layouts/messages' %>
+  <%= yield %>
 <div class = "container-fluid well">
 <%= form_tag "/login" do %>
 
