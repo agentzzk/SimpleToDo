@@ -1,9 +1,12 @@
 <div style="background:transparent !important" class="jumbotron">
   <div class="container home">
-  <div class="container home">
-    <%= render 'layouts/messages' %>
-    <%= yield %>
-  </div>
+    <div class = "container-fluid">
+    <% flash.each do |message_type, message| %>
+    <div class = "alert alert-<%= message_type %>">
+      <p class = "lead"><%= message %>
+      <a class = "close" data-dismiss = "alert">&#215;</a></p>
+      <% end %>
+    </div>
   <h1>Simple To-Do</h1>
   <p>A simple to-do application designed with Rails. Create an account to save or edit your list.
     Access it from anywhere, even on mobile! Register now to create a list!</p>
