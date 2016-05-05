@@ -1,10 +1,6 @@
 # Purpose
 Simple todo application made with Rails.
 
-#Open sourced (yay)!
-Feel free to use/modify/improve my Ruby code.
-- It would be awesome if you could post an issue and then fork the repo for improvements (see below for details)
-
 ###Details
 - 3 main models: User, Task, and Page
 - A user has many tasks
@@ -15,5 +11,4 @@ Feel free to use/modify/improve my Ruby code.
 - Security and validation: backed with Heroku.
 
 <br>
-Thanks, AgentZ
-###### (i.e. Zain Z.) -> AgentZ is my cool name =)
+AgentZ
